@@ -1,13 +1,18 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone: true,
+  imports: [FormsModule]
 })
 export class AppComponent {
-  title = 'typing-speed-app';
+  targetText = 'Hello World';
+  userInput: string = "";
+
+  onInputChange() {
+    // Logic to handle user input
+  }
 }
