@@ -1,5 +1,11 @@
-<div class="typing-container">
-    <span class="target-text">{{ targetText }}</span>
-    <input type="text" [(ngModel)]="userInput" (input)="onInputChange()" class="typing-input" />
+<div class="center-wrapper">
+    <div class="typing-container">
+   
+      <span *ngFor="let letter of targetTextArray; let i = index" [ngClass]="{'correct': letter.correct, 'incorrect': !letter.correct && userInput.length > i}">
+        {{ letter.char }}
+        </span>
+        <span *ngIf="userInput.length < targetText.length" class="caret"></span>
+        <input type="text" [(ngModel)]="userInput" (input)="onInputChange()" class="typing-input" #inputField />
+    </div>
 </div>
   

@@ -1,21 +1,49 @@
-.typing-container {
-    position: relative;
-    display: inline-block;
+.correct {
+    color: green; /* Correct character color */
   }
   
-  .target-text {
-    font-size: 16px;
-    color: #888; /* Color of the target text */
+  .incorrect {
+    color: red; /* Incorrect character color */
+  }
+  
+  .center-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .typing-container {
+    position: relative;
+  }
+
+  .typing-container span {
+    display: inline-block;
+    min-width: 1ch; /* Ensure every character, including spaces, has width */
   }
   
   .typing-input {
+    caret-color: transparent;
     position: absolute;
     top: 0;
     left: 0;
+    width: 100%;
     border: none;
     outline: none;
     background-color: transparent;
-    color: black; /* Color of the user's text */
-    font-size: 16px;
-    width: 100%;
+    color: transparent; /* Make text transparent instead of the input itself */
   }
+  
+  .caret {
+    display: inline-block;
+    height: 1em;
+    width: 2px;
+    background-color: black;
+    animation: blink-caret 0.7s steps(5, start) infinite;
+  }
+  
+  @keyframes blink-caret {
+    from, to { background-color: transparent }
+    50% { background-color: black; }
+  }
+  
