@@ -1,9 +1,18 @@
-.correct {
+    .correct {
     color: green; /* Correct character color */
   }
   
   .incorrect {
     color: red; /* Incorrect character color */
+  }
+  .caret {
+    display: inline-block;
+    height: 1em;
+    width: 0; /* Ensures the caret does not have a "width" */
+    border-left: 1px solid black; /* Creates a thin line for the caret */
+    z-index: 10;
+    position: absolute;
+    animation: blink-caret 0.7s steps(5, start) infinite;
   }
   
   .center-wrapper {
@@ -14,6 +23,7 @@
   }
   
   .typing-container {
+    font-family: 'Courier New', Courier, monospace;
     position: relative;
   }
 
@@ -33,17 +43,10 @@
     background-color: transparent;
     color: transparent; /* Make text transparent instead of the input itself */
   }
+
   
-  .caret {
-    display: inline-block;
-    height: 1em;
-    width: 2px;
-    background-color: black;
-    animation: blink-caret 0.7s steps(5, start) infinite;
-  }
-  
-  @keyframes blink-caret {
-    from, to { background-color: transparent }
-    50% { background-color: black; }
-  }
+//   @keyframes blink-caret {
+//     from, to { background-color: transparent }
+//     50% { background-color: black; }
+//   }
   
